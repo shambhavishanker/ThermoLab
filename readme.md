@@ -17,7 +17,7 @@ The UI follows a clean, light theme to keep the focus on the science rather than
 4. Explore and interact with the tools
 
 
-- Python Version (Terminal Toolkit):
+Python Version (Terminal Toolkit):
 Alongside the web tools, ThermoLab also includes a full Python CLI version of every module.
 This helped us verify the calculations independently and practise writing clear Python code.
 
@@ -29,7 +29,7 @@ Each module in Python mirrors the logic of the web version.
 
 
 
-- Included Modules
+Included Modules
 1. System Classifier
 Identifies whether a system is open, closed, or isolated and determines the allowed energy/matter transfers.
 
