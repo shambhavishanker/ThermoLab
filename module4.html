@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Entropy Mixing Simulator</title>
+  <link rel="stylesheet" href="module5.css" />
+  <script defer src="module5.js"></script>
+</head>
+<body>
+  <a href="index.html" class="back">← Back to Dashboard</a>
+
+  <h1 class="title">Entropy Mixing Simulator</h1>
+  <p class="subtitle">
+    Visualize particles mixing from ordered (low entropy) to random (high entropy).
+  </p>
+
+  <div class="container">
+    <!-- LEFT: controls + info -->
+    <div class="card">
+      <h2>Controls</h2>
+
+      <p class="small-text">
+        Initially, blue particles are on the left and pink particles on the right.
+        When you start mixing, they move randomly and spread out.
+      </p>
+
+      <button id="startBtn">Start Mixing</button>
+      <button id="resetBtn" class="secondary">Reset</button>
+
+      <div class="info-box">
+        <h3>Entropy Progress</h3>
+        <div class="progress-wrap">
+          <div id="entropyBar" class="progress-bar"></div>
+        </div>
+        <p id="entropyLabel" class="entropy-label">Entropy: 0%</p>
+      </div>
+
+      <div class="explain-box">
+        <strong>Concept:</strong>
+        <p>
+          At low entropy, particles are ordered and separated. As they mix and
+          spread throughout the container, disorder increases and entropy rises.
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT: animation area -->
+    <div class="card">
+      <h2>Particle Box</h2>
+      <div id="box" class="box">
+        <!-- particles are created by JS -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

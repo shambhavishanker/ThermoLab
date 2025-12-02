@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ΔG Spontaneity Studio</title>
+  <link rel="stylesheet" href="module6.css">
+  <script defer src="module6.js"></script>
+</head>
+
+<body>
+
+<a href="index.html" class="back">← Back to Dashboard</a>
+
+<h1 class="title">ΔG Spontaneity Studio</h1>
+<p class="subtitle">Calculate Gibbs Free Energy using ΔG = ΔH − TΔS</p>
+
+<div class="container">
+
+  <!-- LEFT: INPUT -->
+  <div class="card">
+    <h2>Input</h2>
+
+    <label>ΔH (kJ/mol)</label>
+    <input type="number" id="input-dH">
+
+    <label>ΔS (J/(mol·K))</label>
+    <input type="number" id="input-dS">
+
+    <label>T (K)</label>
+    <input type="number" id="input-T">
+
+    <button onclick="calculateDG()">Calculate ΔG</button>
+  </div>
+
+  <!-- RIGHT: OUTPUT -->
+  <div class="card">
+    <h2>Results</h2>
+
+    <div id="gibbs-output" class="info-box">
+      Enter values to begin.
+    </div>
+
+    <div id="gibbs-interpretation" class="explain-box"></div>
+
+    <div class="info-box">
+      <strong>Temperature Behaviour Guide:</strong>
+      <p>ΔH < 0 and ΔS > 0 → Spontaneous at all T</p>
+      <p>ΔH > 0 and ΔS < 0 → Never spontaneous</p>
+      <p>ΔH < 0 and ΔS < 0 → Spontaneous at low T</p>
+      <p>ΔH > 0 and ΔS > 0 → Spontaneous at high T</p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

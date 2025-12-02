@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hess's Law Pathway Builder</title>
+  <link rel="stylesheet" href="module7.css" />
+  <script defer src="module7.js"></script>
+</head>
+
+<body>
+  <a href="index.html" class="back">&#8592; Back to Dashboard</a>
+
+  <h1 class="title">Hess's Law Pathway Builder</h1>
+  <p class="subtitle">
+    Add enthalpy changes for individual steps and verify that the overall
+    ΔH is path-independent.
+  </p>
+
+  <div class="container">
+    <!-- LEFT: INPUT -->
+    <div class="card">
+      <h2>Input Steps (ΔH in kJ/mol)</h2>
+
+      <label>Step 1 ΔH</label>
+      <input type="number" id="step1" placeholder="-92.3" />
+
+      <label>Step 2 ΔH</label>
+      <input type="number" id="step2" placeholder="45.7" />
+
+      <label>Step 3 ΔH (optional)</label>
+      <input type="number" id="step3" placeholder="0" />
+
+      <div class="info-box">
+        <strong>Note:</strong><br />
+        • Use negative ΔH for exothermic steps.<br />
+        • Leave unused steps blank (they’ll be treated as 0).<br />
+        • Hess's Law: total ΔH = sum of all step enthalpies.
+      </div>
+
+      <button onclick="calculateHess()">Calculate Overall ΔH</button>
+    </div>
+
+    <!-- RIGHT: RESULTS -->
+    <div class="card">
+      <h2>Results</h2>
+
+      <div class="result-row">
+        <span>Step 1</span>
+        <span id="step1Result">—</span>
+      </div>
+
+      <div class="result-row">
+        <span>Step 2</span>
+        <span id="step2Result">—</span>
+      </div>
+
+      <div class="result-row">
+        <span>Step 3</span>
+        <span id="step3Result">—</span>
+      </div>
+
+      <p class="classification-label">Overall Enthalpy Change:</p>
+      <div id="totalBox" class="final-box">—</div>
+
+      <div class="explain-box">
+        <strong>Interpretation:</strong>
+        <p id="explainText">Enter step values and click the button.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

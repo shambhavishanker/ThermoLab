@@ -1,0 +1,148 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  margin: 0;
+  padding: 30px;
+}
+
+.back {
+  text-decoration: none;
+  color: #666;
+  font-size: 16px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 10px;
+  color: #4c3fd8;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  flex: 1;
+}
+
+h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d4d4d8;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+.note {
+  margin-top: 18px;
+  font-size: 13px;
+  background: #eef2ff;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.metric {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.progress-track {
+  margin-top: 6px;
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  transition: width 0.15s linear;
+}
+
+.legend {
+  margin-top: 15px;
+  font-size: 13px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.chip {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.chip-a {
+  background: #0ea5e9;
+}
+
+.chip-b {
+  background: #f97316;
+}
+
+#gridCanvas {
+  display: block;
+  margin-top: 15px;
+  width: 320px;
+  height: 320px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #020617;
+}
+
+/* small screens */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+}

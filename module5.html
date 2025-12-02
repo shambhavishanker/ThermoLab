@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Entropy Simulation</title>
+  <link rel="stylesheet" href="module5.css" />
+  <script defer src="module5.js"></script>
+</head>
+
+<body>
+  <a href="index.html" class="back">← Back to Dashboard</a>
+
+  <h1 class="title">Entropy Simulation</h1>
+  <p class="subtitle">
+    Watch particle mixing and see entropy increase over time.
+  </p>
+
+  <div class="container">
+    <!-- LEFT: INPUTS -->
+    <div class="card">
+      <h2>Input Parameters</h2>
+
+      <label>
+        Number of Steps
+        <input type="number" id="stepsInput" value="200" min="10" max="1000" />
+      </label>
+
+      <label>
+        Grid Size
+        <select id="gridSize">
+          <option value="10">10 × 10</option>
+          <option value="15">15 × 15</option>
+          <option value="20">20 × 20</option>
+        </select>
+      </label>
+
+      <p class="note">
+        Initially, particles A and B are separated. As they move randomly,
+        mixing increases (entropy ↑).
+      </p>
+
+      <button id="runBtn">Run Simulation</button>
+    </div>
+
+    <!-- RIGHT: VISUAL + RESULTS -->
+    <div class="card">
+      <h2>Results</h2>
+
+      <p class="metric">
+        Step: <span id="stepLabel">0 / 0</span>
+      </p>
+
+      <p class="metric">
+        Entropy Level: <span id="entropyValue">0.00</span>
+      </p>
+
+      <div class="metric">
+        Mixing Progress
+        <div class="progress-track">
+          <div id="mixBar" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <p class="legend">
+        <span class="chip chip-a"></span> Particle A
+        <span class="chip chip-b"></span> Particle B
+      </p>
+
+      <canvas id="gridCanvas" width="320" height="320"></canvas>
+    </div>
+  </div>
+</body>
+</html>
