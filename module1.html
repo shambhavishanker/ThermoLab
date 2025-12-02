@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermodynamic System Classifier</title>
+    <link rel="stylesheet" href="module1.css">
+    <script defer src="module1.js"></script>
+</head>
+
+<body>
+
+<a href="index.html" class="back">&#8592; Back to Dashboard</a>
+
+<h1 class="title">Thermodynamic System Classifier</h1>
+<p class="subtitle">
+    Identifies types of system and predicts heat, work, and matter transfer 
+</p>
+
+<div class="container">
+
+    <!-- LEFT: INPUT -->
+    <div class="card input-card">
+
+        <h2>Input Parameters</h2>
+
+        <label>System Type</label>
+        <select id="systemType">
+            <option>Open System</option>
+            <option>Closed System</option>
+            <option>Isolated System</option>
+        </select>
+
+        <label>Wall Type</label>
+        <select id="wallType">
+            <option>Diathermic (Allows heat)</option>
+            <option>Adiabatic (No heat)</option>
+        </select>
+
+        <div class="info-box">
+            <strong>System Types:</strong><br>
+            • <b>Open:</b> Exchanges matter & energy <br>
+            • <b>Closed:</b> Exchanges energy only <br>
+            • <b>Isolated:</b> No exchanges
+        </div>
+
+        <button onclick="classifySystem()">Classify System</button>
+    </div>
+
+
+    <!-- RIGHT: RESULTS -->
+    <div class="card result-card">
+
+        <h2>Results</h2>
+
+        <div class="result-row">
+            <span>Heat Transfer</span>
+            <span id="heatResult" class="status">-</span>
+        </div>
+
+        <div class="result-row">
+            <span>Work Transfer</span>
+            <span id="workResult" class="status">-</span>
+        </div>
+
+        <div class="result-row">
+            <span>Matter Transfer</span>
+            <span id="matterResult" class="status">-</span>
+        </div>
+
+        <p class="classification-label">System Classification:</p>
+        <div id="finalLabel" class="final-box">-</div>
+
+        <div class="explain-box">
+            <strong>Explanation:</strong>
+            <p id="explainText">—</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
