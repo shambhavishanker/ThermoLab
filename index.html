@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ThermoToolkit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h1 class="logo">Thermo<span>Lab</span></h1>
+    <p class="tagline">Thermodynamics Toolkit</p>
+
+    <nav class="menu">
+      <a href="index.html" class="menu-btn active">🏠 Dashboard</a>
+      <a href="module1.html" class="menu-btn">System Classifier</a>
+      <a href="module2.html" class="menu-btn">Ideal gas vs Real gas mapper</a>
+      <a href="module3.html" class="menu-btn">Work Calculator</a>
+      <a href="module4.html" class="menu-btn">Heat Capacity & Heating Simulator</a>
+      <a href="module5.html" class="menu-btn">Entropy Simulation</a>
+      <a href="module6.html" class="menu-btn">ΔG Spontaneity Studio</a>
+      <a href="module7.html" class="menu-btn">Hess's Law Pathway</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <h2>Dashboard</h2>
+    <p class="intro">Select a thermodynamics module to explore.</p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>System Classifier</h3>
+        <p>Classify open / closed / isolated systems.</p>
+        <button onclick="location.href='module1.html'" class="card-btn">Open</button>
+      </div>
+
+      <div class="card">
+        <h3>Ideal gas vs Real gas mapper</h3>
+        <p>Visualize Z-factor variations with pressure for real gases using van der Waals equation</p>
+        <button class="card-btn" onclick="location.href='module2.html'">Open</button>
+      </div>
+
+      <div class="card">
+        <h3>Work Calculator</h3>
+        <p>Reversible vs irreversible expansion work.</p>
+        <button class="card-btn" onclick="location.href='module3.html'">Open</button>
+      </div>
+
+      <div class="card">
+        <h3>Heat Capacity & Heating Simulator</h3>
+        <p>Calculate heat transfer and visualize temperature changes</p>
+        <button class="card-btn" onclick="location.href='module4.html'">Open</button>
+      </div>
+
+      <div class="card">
+        <h3>Entropy Simulation</h3>
+        <p>Watch particle mixing and observe entropy increase over time</p>
+        <button class="card-btn" onclick="location.href='module5.html'">Open</button>
+      </div>
+
+
+      <div class="card">
+        <h3>ΔG Spontaneity Studio</h3>
+        <p>Calculate Gibbs Free Energy (ΔG).</p>
+        <button onclick="location.href='module6.html'" class="card-btn">Open</button>
+      </div>
+
+      <div class="card">
+        <h3>Hess's Law Pathway Builder</h3>
+        <p>Combine step enthalpies and find overall ΔH.</p>
+        <a href="module7.html" class="card-btn">Open</a>
+      </div>
+      <div class="card disabled">
+        <h3>More Modules</h3>
+        <p>Coming soon…</p>
+      </div>
+      
+      <div class="contributors">
+        <h4>Project Contributors</h4>
+        <p>Shambhavi Shanker – 25BHI10120</p>
+        <p>Anoushka Gautam – 25BHI10007</p>
+        <p>Kavya Trivedi – 25BHI10099</p>
+     </div>
+
+    </div>
+  </main>
+</div>
+</body>
+</html>
