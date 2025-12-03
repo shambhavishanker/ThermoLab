@@ -1,35 +1,44 @@
 function calculateHeat() {
+  const substance = document.getElementById("substance").value.trim();
+  const mass = parseFloat(document.getElementById("mass").value);
+  const c = parseFloat(document.getElementById("c").value);
+  const t1 = parseFloat(document.getElementById("t1").value);
+  const t2 = parseFloat(document.getElementById("t2").value);
 
-    let m = parseFloat(document.getElementById("mass").value);
-    let c = parseFloat(document.getElementById("shc").value);
-    let Ti = parseFloat(document.getElementById("tInitial").value);
-    let Tf = parseFloat(document.getElementById("tFinal").value);
+  if (isNaN(mass) || isNaN(c) || isNaN(t1) || isNaN(t2)) {
+    alert("Please fill in all numerical fields (mass, C, T₁, T₂).");
+    return;
+  }
 
-    let dT = Tf - Ti;
-    let Q = m * c * dT;
+  const deltaT = t2 - t1;
+  const q = mass * c * deltaT; // q = m · C · ΔT
 
-    // Update UI
-    document.getElementById("Qvalue").innerHTML = Q.toFixed(2) + " J";
-    document.getElementById("deltaT").innerHTML = dT.toFixed(2) + " °C";
+  const resultsDiv = document.getElementById("results");
+  const summaryP = document.getElementById("summary");
 
-    document.getElementById("TiLabel").innerHTML = Ti + "°C";
-    document.getElementById("TfLabel").innerHTML = Tf + "°C";
+  let namePart = substance ? `${substance}: ` : "";
 
-    // Process Type
-    let tag = document.getElementById("processTag");
-    let exp = document.getElementById("explanation");
-    let label = document.getElementById("processLabel");
+  summaryP.textContent = `${namePart}Temperature changes from ${t1.toFixed(
+    1
+  )} °C to ${t2.toFixed(1)} °C.`;
 
-    if (Q > 0) {
-        tag.innerHTML = "Heating";
-        tag.style.color = "#d62839";
-        label.innerHTML = "Energy absorbed";
-        exp.innerHTML = "Positive Q means heat is absorbed (endothermic). The substance temperature increases.";
-    }
-    else {
-        tag.innerHTML = "Cooling";
-        tag.style.color = "#2563eb";
-        label.innerHTML = "Energy released";
-        exp.innerHTML = "Negative Q means heat is released (exothermic). The substance cools down.";
-    }
+  let processText = "";
+  if (deltaT > 0) {
+    processText = "This is a heating process (heat is absorbed).";
+  } else if (deltaT < 0) {
+    processText = "This is a cooling process (heat is released).";
+  } else {
+    processText = "No temperature change (ΔT = 0).";
+  }
+
+  resultsDiv.innerHTML = `
+    <p><strong>ΔT:</strong> ${deltaT.toFixed(2)} °C</p>
+    <p><strong>Heat required q:</strong> ${q.toFixed(2)} J</p>
+    <p>${processText}</p>
+  `;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("calcBtn");
+  btn.addEventListener("click", calculateHeat);
+});
