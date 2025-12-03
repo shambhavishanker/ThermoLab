@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideal Gas vs Real Gas Mapper</title>
+    <link rel="stylesheet" href="module2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="module2.js"></script>
+</head>
+
+<body>
+
+<a href="index.html" class="back">← Back to Dashboard</a>
+
+<h1 class="title">Ideal Gas vs Real Gas Mapper</h1>
+<p class="subtitle">
+    Visualize Z-factor variations with pressure for real gases using van der Waals equation
+</p>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="card input-card">
+
+        <h2>Input Parameters</h2>
+
+        <label>Select Gas</label>
+        <select id="gasSelect">
+            <option value="N2">Nitrogen (N₂)</option>
+            <option value="CO2">Carbon Dioxide (CO₂)</option>
+            <option value="CH4">Methane (CH₄)</option>
+        </select>
+
+        <label>Temperature (T)</label>
+        <input id="tempInput" type="number" value="300">
+
+        <div class="info-box">
+            <strong>About Z-Factor:</strong><br>
+            Z = PV/(nRT). For ideal gas Z = 1.  
+            Real gases deviate due to intermolecular forces and finite molecular volume.
+        </div>
+
+        <button onclick="generatePlot()">Generate Z vs P Plot</button>
+
+    </div>
+
+
+    <!-- RIGHT PANEL -->
+    <div class="card result-card">
+
+        <h2>Results</h2>
+
+        <div class="constants">
+            <div class="const-box">
+                <span class="label">Constant a</span>
+                <span id="aValue" class="value">—</span>
+            </div>
+
+            <div class="const-box">
+                <span class="label">Constant b</span>
+                <span id="bValue" class="value">—</span>
+            </div>
+        </div>
+
+        <h3>Z-Factor vs Pressure</h3>
+        <canvas id="zChart"></canvas>
+
+        <div class="explain-box">
+            <strong>Interpretation:</strong>
+            <p>
+                Real gases deviate from ideal behavior at high pressures.  
+                If Z < 1, attractive forces dominate.  
+                If Z > 1, repulsive forces dominate.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
