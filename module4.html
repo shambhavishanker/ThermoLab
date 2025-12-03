@@ -2,55 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Entropy Mixing Simulator</title>
-  <link rel="stylesheet" href="module5.css" />
-  <script defer src="module5.js"></script>
+  <title>Heat Capacity & Heating Simulator</title>
+  <link rel="stylesheet" href="module4.css" />
+  <script defer src="module4.js"></script>
 </head>
 <body>
+
   <a href="index.html" class="back">← Back to Dashboard</a>
 
-  <h1 class="title">Entropy Mixing Simulator</h1>
+  <h1 class="title">Heat Capacity &amp; Heating Simulator</h1>
   <p class="subtitle">
-    Visualize particles mixing from ordered (low entropy) to random (high entropy).
+    Use <strong>q = m · C · ΔT</strong> to find the heat needed to raise or lower temperature.
   </p>
 
   <div class="container">
-    <!-- LEFT: controls + info -->
+    <!-- LEFT: INPUTS -->
     <div class="card">
-      <h2>Controls</h2>
+      <h2>Input Parameters</h2>
 
-      <p class="small-text">
-        Initially, blue particles are on the left and pink particles on the right.
-        When you start mixing, they move randomly and spread out.
+      <label>
+        Substance (optional)
+        <input type="text" id="substance" placeholder="e.g., Water" />
+      </label>
+
+      <label>
+        Mass (m) in grams
+        <input type="number" id="mass" placeholder="e.g., 100" />
+      </label>
+
+      <label>
+        Specific Heat Capacity C (J/g·K)
+        <input type="number" id="c" placeholder="e.g., 4.18" step="0.01" />
+      </label>
+
+      <label>
+        Initial Temperature T₁ (°C)
+        <input type="number" id="t1" placeholder="e.g., 25" step="0.1" />
+      </label>
+
+      <label>
+        Final Temperature T₂ (°C)
+        <input type="number" id="t2" placeholder="e.g., 80" step="0.1" />
+      </label>
+
+      <button id="calcBtn">Calculate Heat (q)</button>
+    </div>
+
+    <!-- RIGHT: RESULTS -->
+    <div class="card">
+      <h2>Results</h2>
+
+      <p id="summary" class="summary">
+        Enter values on the left and click <b>Calculate Heat (q)</b> to see ΔT and heat required.
       </p>
 
-      <button id="startBtn">Start Mixing</button>
-      <button id="resetBtn" class="secondary">Reset</button>
+      <div id="results" class="results"></div>
 
       <div class="info-box">
-        <h3>Entropy Progress</h3>
-        <div class="progress-wrap">
-          <div id="entropyBar" class="progress-bar"></div>
-        </div>
-        <p id="entropyLabel" class="entropy-label">Entropy: 0%</p>
-      </div>
-
-      <div class="explain-box">
         <strong>Concept:</strong>
         <p>
-          At low entropy, particles are ordered and separated. As they mix and
-          spread throughout the container, disorder increases and entropy rises.
+          The heat absorbed or released is given by <strong>q = m · C · ΔT</strong>, where:
+        </p>
+        <ul>
+          <li><b>m</b> = mass of substance (g)</li>
+          <li><b>C</b> = specific heat capacity (J/g·K)</li>
+          <li><b>ΔT</b> = T₂ − T₁ (°C or K)</li>
+        </ul>
+        <p>
+          If ΔT &gt; 0 → heating (q &gt; 0).<br />
+          If ΔT &lt; 0 → cooling (q &lt; 0).
         </p>
       </div>
     </div>
-
-    <!-- RIGHT: animation area -->
-    <div class="card">
-      <h2>Particle Box</h2>
-      <div id="box" class="box">
-        <!-- particles are created by JS -->
-      </div>
-    </div>
   </div>
+
 </body>
 </html>
